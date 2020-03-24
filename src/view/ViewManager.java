@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import model.SpaceRunnerButton;
 
 public class ViewManager {
 	
@@ -30,7 +31,8 @@ public class ViewManager {
 	}
 	
 	private void createButtons() {
-		
+		SpaceRunnerButton button = new SpaceRunnerButton("CLICK BOTARD");
+		mainPane.getChildren().add(button);
 	}
 
 }
