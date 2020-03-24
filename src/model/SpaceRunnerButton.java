@@ -8,13 +8,14 @@ import javafx.scene.control.Button;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
 public class SpaceRunnerButton extends Button {
 	
 	private final String FONT_PATH = "src/model/resources/Space.otf";
-	private final String BUTTON_PRESSED_STYLE= "-fx-background-color: transparent; -fx-background-image: url('/model/resources/glassPanel_cornerTL.png'); -fx-background-size: 100% 49px;";
-	private final String BUTTON_FREE_STYLE= "-fx-background-color: transparent; -fx-background-image: url('/model/resources/glassPanel_cornerTL.png'); -fx-background-size: 100% 49px;";
+	private final String BUTTON_PRESSED_STYLE = "-fx-background-color: transparent; -fx-background-image: url('/model/resources/glassPanel_cornerTL.png'); -fx-background-size: 100% 49px; font-color: white;";
+	private final String BUTTON_FREE_STYLE = "-fx-background-color: transparent; -fx-background-image: url('/model/resources/glassPanel_cornerTL.png'); -fx-background-size: 100% 49px; font-color: white;";
 	
 	public SpaceRunnerButton(String text) {
 		
@@ -22,6 +23,7 @@ public class SpaceRunnerButton extends Button {
 		setButtonFont();
 		setPrefWidth(190);
 		setPrefHeight(49);
+		setTextFill(Color.DARKGRAY);
 		setStyle(BUTTON_FREE_STYLE);
 		initializeButtonListenners();
 	}
@@ -74,6 +76,7 @@ public class SpaceRunnerButton extends Button {
 			@Override
 			public void handle(MouseEvent event) {
 				setEffect(new DropShadow());
+				setTextFill(Color.WHITE);
 			}
 		});
 		
@@ -82,6 +85,7 @@ public class SpaceRunnerButton extends Button {
 			@Override
 			public void handle(MouseEvent event) {
 				setEffect(null);
+				setTextFill(Color.DARKGRAY);
 			}
 		});
 	}
