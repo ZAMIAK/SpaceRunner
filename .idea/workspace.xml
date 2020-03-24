@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="03251438-c396-47df-a408-78dc90d4d554" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/bin/application/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/application/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/model/SpaceRunnerButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/model/SpaceRunnerButton.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/view/ViewManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/ViewManager.class" afterDir="false" />
-    </list>
+    <list default="true" id="03251438-c396-47df-a408-78dc90d4d554" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,7 +60,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1585061770695</updated>
-      <workItem from="1585061779206" duration="455000" />
+      <workItem from="1585061779206" duration="917000" />
     </task>
     <servers />
   </component>
@@ -76,6 +72,22 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="490" y="229" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1280.680@0.0.1280.680" timestamp="1585061814297" />
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1585062702543">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1585062702543" />
+    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1585062702542">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1585062702542" />
+    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1585062702541">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1585062702541" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1585062702543">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1585062702543" />
     <state x="428" y="56" key="VCS.ChangeListViewerDialog" timestamp="1585061907283">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
