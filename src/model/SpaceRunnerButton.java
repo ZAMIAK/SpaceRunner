@@ -13,8 +13,8 @@ import javafx.scene.text.Font;
 public class SpaceRunnerButton extends Button {
 	
 	private final String FONT_PATH = "src/model/resources/Space.otf";
-	private final String BUTTON_PRESSED_STYLE= "-fx-background-color: transparent; -fx-background-image: url('/model/resources/barHorizontal_red_mid.png')";
-	private final String BUTTON_FREE_STYLE= "-fx-background-color: transparent; -fx-background-image: url('/model/resources/barHorizontal_red_mid.png')";
+	private final String BUTTON_PRESSED_STYLE= "-fx-background-color: transparent; -fx-background-image: url('/model/resources/glassPanel_cornerTL.png'); -fx-background-size: 100% 49px;";
+	private final String BUTTON_FREE_STYLE= "-fx-background-color: transparent; -fx-background-image: url('/model/resources/glassPanel_cornerTL.png'); -fx-background-size: 100% 49px;";
 	
 	public SpaceRunnerButton(String text) {
 		
