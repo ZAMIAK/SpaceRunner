@@ -1,5 +1,6 @@
 package view;
 
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +17,8 @@ import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.HBox;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import model.InfoLabel;
 import model.SHIP;
@@ -34,11 +37,13 @@ public class ViewManager {
 	private final static int MENU_BUTTONS_START_X = 100;
 	private final static int MENU_BUTTONS_START_Y = 150;
 	
+	private static final String MUSIC = "src/view/resources/The_Farthest_Star.mp3";
+	private MediaPlayer music;
+	
 	private SpaceRunnerSubscene startSubScene;
 	private SpaceRunnerSubscene scoresSubScene;
 	private SpaceRunnerSubscene histSubScene;
 	private SpaceRunnerSubscene creditsSubScene;
-	
 	private SpaceRunnerSubscene sceneToHide;
 	
 	List<SpaceRunnerButton> menuButtons;
@@ -57,11 +62,21 @@ public class ViewManager {
 		createButtons();
 		createBackground();
 		createLogo();
+		startMusic();
 	}
 	
 	public Stage getMainStage() {
 		
 		return mainStage;
+	}
+	
+	private void startMusic() {
+		
+		Media backgroundMusic = new Media(Paths.get(MUSIC).toUri().toString());
+		music = new MediaPlayer(backgroundMusic);
+		music.setVolume(0.1);
+		music.play();
+		
 	}
 	
 	private void showSubScene(SpaceRunnerSubscene subScene) {
