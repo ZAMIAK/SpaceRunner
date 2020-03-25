@@ -8,10 +8,13 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import model.SHIP;
 import model.SmallInfoLabel;
 
+import java.nio.file.Paths;
 import java.util.Random;
 
 public class GameViewManager {
@@ -37,6 +40,12 @@ public class GameViewManager {
 
 	private final static String METEOR_BROWN_IMAGE_SMALL = "view/resources/spaceMeteorsBrownSmall.png";
 	private final static String METEOR_GREY_IMAGE_SMALL = "view/resources/spaceMeteorsGreySmall.png";
+	
+	private static final String STAR_SONG = "src/view/resources/key.mp3";
+	private static final String METEOR_SONG = "src/view/resources/win.mp3";
+	private MediaPlayer starSong;
+	private MediaPlayer meteorSong;
+	private static final double VOLUME_SONG = 0.1;
 
 	private ImageView[] brownMeteorsSmall;
 	private ImageView[] greyMeteorsSmall;
@@ -58,6 +67,17 @@ public class GameViewManager {
 		initializeStage();
 		createKeyListeners();
 		randomPositionGenerator = new Random();
+		createSongs();
+	}
+	
+	private void createSongs() {
+		Media myStartSong = new Media(Paths.get(STAR_SONG).toUri().toString());
+		starSong = new MediaPlayer(myStartSong);
+		starSong.setVolume(VOLUME_SONG);
+		
+		Media myMeteorSong = new Media(Paths.get(METEOR_SONG).toUri().toString());
+		meteorSong = new MediaPlayer(myMeteorSong);
+		meteorSong.setVolume(VOLUME_SONG);
 	}
 
 	private void createKeyListeners() {
@@ -279,6 +299,8 @@ public class GameViewManager {
 				textToSet = textToSet + "0";
 			}
 			pointsLabel.setText(textToSet + points);
+			starSong.play();
+			createSongs();
 		}
 
 		for(int i = 0; i < brownMeteorsSmall.length; i++){
@@ -299,6 +321,8 @@ public class GameViewManager {
 	private void removeLife(){
 		gamePane.getChildren().remove(playerLifes[playerLife]);
 		playerLife--;
+		meteorSong.play();
+		createSongs();
 		if(playerLife<0){
 			gameStage.close();
 			gameTimer.stop();

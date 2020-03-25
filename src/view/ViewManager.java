@@ -37,7 +37,7 @@ public class ViewManager {
 	private final static int MENU_BUTTONS_START_X = 100;
 	private final static int MENU_BUTTONS_START_Y = 150;
 	
-	private static final String MUSIC = "src/view/resources/The_Farthest_Star.mp3";
+	private static final String MUSIC = "src/view/resources/Recall_of_the_Shadows.mp3";
 	private MediaPlayer music;
 	
 	private SpaceRunnerSubscene startSubScene;
@@ -74,7 +74,7 @@ public class ViewManager {
 		
 		Media backgroundMusic = new Media(Paths.get(MUSIC).toUri().toString());
 		music = new MediaPlayer(backgroundMusic);
-		music.setVolume(0.1);
+		music.setVolume(0.07);
 		music.play();
 		
 	}
