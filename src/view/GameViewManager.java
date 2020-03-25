@@ -52,6 +52,7 @@ public class GameViewManager {
 	private final static int STAR_RADIUS = 12;
 	private final static int SHIP_RADIUS = 27;
 	private final static int METEOR_RADIUS = 20;
+	private final static double DROP_STAR = 1.2;
 
 	public GameViewManager() {
 		initializeStage();
@@ -152,6 +153,12 @@ public class GameViewManager {
 			greyMeteorsSmall[i].setLayoutY(greyMeteorsSmall[i].getLayoutY()+12);
 			greyMeteorsSmall[i].setRotate(greyMeteorsSmall[i].getRotate()+6);
 		}
+		points++;
+		String textToSet = "PTS : ";
+		if(points <10){
+			textToSet = textToSet + "0";
+		}
+		pointsLabel.setText(textToSet + points);
 	}
 
 	private void checkIfElementsAreBehindTheShipAndRelocate(){
@@ -266,8 +273,8 @@ public class GameViewManager {
 	private void checkIfElementsCollides(){
 		if(SHIP_RADIUS + STAR_RADIUS > calculateDistance(ship.getLayoutX()+49,star.getLayoutX()+15,ship.getLayoutY()+37, star.getLayoutY()+15)){
 			setNewElementPosition(star);
-			points++;
-			String textToSet = "POINTS : ";
+			points *= DROP_STAR;
+			String textToSet = "PTS : ";
 			if(points <10){
 				textToSet = textToSet + "0";
 			}
