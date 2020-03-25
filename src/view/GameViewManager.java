@@ -114,7 +114,7 @@ public class GameViewManager {
 		star = new ImageView(GOLD_STAR);
 		setNewElementPosition(star);
 		gamePane.getChildren().add(star);
-		pointsLabel = new SmallInfoLabel("POINTS : 00");
+		pointsLabel = new SmallInfoLabel("PTS : 00");
 		pointsLabel.setLayoutX(460);
 		pointsLabel.setLayoutY(20);
 		gamePane.getChildren().add(pointsLabel);
