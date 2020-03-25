@@ -145,12 +145,12 @@ public class GameViewManager {
 	private void moveGameElements(){
 		star.setLayoutY(star.getLayoutY() + 5);
 		for(int i =0; i < brownMeteorsSmall.length; i++){
-			brownMeteorsSmall[i].setLayoutY(brownMeteorsSmall[i].getLayoutY()+7);
-			brownMeteorsSmall[i].setRotate(brownMeteorsSmall[i].getRotate()+4);
+			brownMeteorsSmall[i].setLayoutY(brownMeteorsSmall[i].getLayoutY()+12);
+			brownMeteorsSmall[i].setRotate(brownMeteorsSmall[i].getRotate()+6);
 		}
 		for(int i =0; i < greyMeteorsSmall.length; i++){
-			greyMeteorsSmall[i].setLayoutY(greyMeteorsSmall[i].getLayoutY()+7);
-			greyMeteorsSmall[i].setRotate(greyMeteorsSmall[i].getRotate()+4);
+			greyMeteorsSmall[i].setLayoutY(greyMeteorsSmall[i].getLayoutY()+12);
+			greyMeteorsSmall[i].setRotate(greyMeteorsSmall[i].getRotate()+6);
 		}
 	}
 
@@ -179,7 +179,7 @@ public class GameViewManager {
 	private void createShip(SHIP choosenShip) {
 		ship = new ImageView(choosenShip.getUrl());
 		ship.setLayoutX(GAME_WIDTH / 2.5);
-		ship.setLayoutY(GAME_HEIGHT - 90);
+		ship.setLayoutY(GAME_HEIGHT - 200);
 		gamePane.getChildren().add(ship);
 	}
 
@@ -204,7 +204,7 @@ public class GameViewManager {
 			}
 			ship.setRotate(angle);
 			if(ship.getLayoutX() > -20){
-				ship.setLayoutX(ship.getLayoutX() - 3);
+				ship.setLayoutX(ship.getLayoutX() - 6);
 			}
 		}
 		if(isRightKeyPressed && !isLeftKeyPressed){
@@ -213,7 +213,7 @@ public class GameViewManager {
 		}
 			ship.setRotate(angle);
 			if(ship.getLayoutX() < 522){
-				ship.setLayoutX(ship.getLayoutX() + 3);
+				ship.setLayoutX(ship.getLayoutX() + 6);
 			}
 		}
 		if(!isLeftKeyPressed && !isRightKeyPressed){
