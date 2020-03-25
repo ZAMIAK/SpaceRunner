@@ -20,6 +20,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import model.InfoLabel;
 import model.SHIP;
 import model.ShipPicker;
@@ -58,6 +59,8 @@ public class ViewManager {
 		mainScene = new Scene(mainPane, WIDTH, HEIGHT);
 		mainStage = new Stage();
 		mainStage.setScene(mainScene);
+		mainStage.setResizable(false);
+		mainStage.initStyle(StageStyle.UNDECORATED);
 		createSubScenes();
 		createButtons();
 		createBackground();
@@ -264,7 +267,7 @@ public class ViewManager {
 	private void createLogo() {
 		
 		ImageView logo = new ImageView("view/resources/title.png");
-		logo.setLayoutX(380);
+		logo.setLayoutX(330);
 		logo.setLayoutY(50);
 		
 		logo.setOnMouseEntered(new EventHandler<MouseEvent>() {

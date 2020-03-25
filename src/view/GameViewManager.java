@@ -11,6 +11,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import model.SHIP;
 import model.SmallInfoLabel;
 
@@ -117,6 +118,8 @@ public class GameViewManager {
 		gameScene = new Scene(gamePane, GAME_WIDTH, GAME_HEIGHT);
 		gameStage = new Stage();
 		gameStage.setScene(gameScene);
+		gameStage.setResizable(false);
+		gameStage.initStyle(StageStyle.UNDECORATED);
 	}
 	
 	public void createNewGame(Stage menuStage, SHIP choosenShip) {
