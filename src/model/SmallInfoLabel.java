@@ -33,7 +33,7 @@ public class SmallInfoLabel extends Label {
 
     private void setLabelFont(){
         try{
-            setFont(Font.loadFont(new FileInputStream(new File(FONT_PATH)),12));
+            setFont(Font.loadFont(new FileInputStream(new File(FONT_PATH)),14));
         }catch(FileNotFoundException e){
             setFont(Font.font("Verdana",12));
         }
