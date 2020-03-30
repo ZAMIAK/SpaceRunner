@@ -150,15 +150,25 @@ public class GameViewManager {
 			gamePane.getChildren().add(playerLifes[i]);
 
 		}
-
-		brownMeteorsSmall = new ImageView[3];
+		
+		setGameDificult(3);
+	}
+	
+	private void setGameDificult(int num) {
+		
+		if(brownMeteorsSmall != null)
+			gamePane.getChildren().removeAll(brownMeteorsSmall);
+		if(greyMeteorsSmall != null)
+			gamePane.getChildren().removeAll(greyMeteorsSmall);
+		
+		brownMeteorsSmall = new ImageView[num];
 		for(int i =0; i<brownMeteorsSmall.length; i++){
 			brownMeteorsSmall[i] = new ImageView(METEOR_BROWN_IMAGE_SMALL);
 			setNewElementPosition(brownMeteorsSmall[i]);
 			gamePane.getChildren().add(brownMeteorsSmall[i]);
 		}
 
-		greyMeteorsSmall = new ImageView[3];
+		greyMeteorsSmall = new ImageView[num];
 		for(int i =0; i<greyMeteorsSmall.length; i++){
 			greyMeteorsSmall[i] = new ImageView(METEOR_GREY_IMAGE_SMALL);
 			setNewElementPosition(greyMeteorsSmall[i]);
@@ -202,7 +212,7 @@ public class GameViewManager {
 	}
 
 	private void setNewElementPosition(ImageView image){
-		image.setLayoutX(randomPositionGenerator.nextInt(370));
+		image.setLayoutX(randomPositionGenerator.nextInt(580));
 		image.setLayoutY(-(randomPositionGenerator.nextInt(3200)+600));
 	}
 	
@@ -217,6 +227,13 @@ public class GameViewManager {
 		gameTimer = new AnimationTimer() {
 			@Override
 			public void handle(long now) {
+				if(points > 1000 && points < 1100) {
+					setGameDificult(10);
+				}else if(points > 3000 && points < 3100) {
+					setGameDificult(15);
+				}else if(points > 5000 && points < 5100) {
+					setGameDificult(20);
+				}
 				moveBackground();
 				moveGameElements();
 				checkIfElementsAreBehindTheShipAndRelocate();

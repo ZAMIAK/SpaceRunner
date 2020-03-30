@@ -40,4 +40,5 @@ public class InfoLabel extends Label {
 			setFont(Font.font("Tahoma", 23));
 		}
 	}
+	
 }
