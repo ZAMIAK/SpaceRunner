@@ -1,11 +1,15 @@
 package view;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
@@ -19,6 +23,9 @@ import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.HBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import model.InfoLabel;
@@ -106,13 +113,12 @@ public class ViewManager {
 		mainPane.getChildren().add(creditsSubScene);
 		
 		createShipChooserSubScene();
+		createHistSubScene();
+		createCreditSubScene();
 	}
 	
 	private void createShipChooserSubScene() {
-		
-		startSubScene = new SpaceRunnerSubscene();
-		mainPane.getChildren().add(startSubScene);
-		
+
 		InfoLabel chooseShipLabel = new InfoLabel("CHOIX DU VAISSEAU");
 		chooseShipLabel.setLayoutX(110);
 		chooseShipLabel.setLayoutY(40);
@@ -120,6 +126,70 @@ public class ViewManager {
 		startSubScene.getPane().getChildren().add(createShipsToChoose());
 		startSubScene.getPane().getChildren().add(createButtonToStart());
 	}
+
+	private void createHistSubScene(){
+		InfoLabel histLabel = new InfoLabel("HISTOIRE");
+		histLabel.setLayoutX(110);
+		histLabel.setLayoutY(40);
+
+		histSubScene.getPane().getChildren().add(histLabel);
+		histSubScene.getPane().getChildren().add(createHistorySW());
+	}
+
+	private void createCreditSubScene(){
+		InfoLabel creditLabel = new InfoLabel("CREDITS");
+		creditLabel.setLayoutX(110);
+		creditLabel.setLayoutY(40);
+
+		creditsSubScene.getPane().getChildren().add(creditLabel);
+		creditsSubScene.getPane().getChildren().add(createCreditText());
+	}
+
+	private void setTextFont(Text text){
+		try {
+			text.setFont(Font.loadFont(new FileInputStream(new File("src/model/resources/Space.otf")),15));
+
+		} catch (FileNotFoundException e) {
+			text.setFont(Font.font("Tahoma", 23));
+		}
+	}
+
+	private Text createHistorySW(){
+		Text histText = new Text();
+		histText.setText("Il y a bien longtemps, dans une galaxie lointaine,\n" +
+				" très lointaine... \n" +
+				"La République Galactique est en pleine \n" +
+				"ébullition. La taxation des routes \n" +
+				"commerciales reliant les systèmes éloignés \n" +
+				"provoque la discorde. Pour régler la question, \n" +
+				"la cupide Fédération du Commerce et ses \n" +
+				"redoutables vaisseaux de guerre imposent \n" +
+				"un blocus à la petite planète Naboo. \n" +
+				"Face à ce dangereux engrenage, alors que le \n" +
+				"Congrès de la République s’enlise dans des débats  \n" +
+				"sans fin, le Chancelier Suprême charge en secret \n" +
+				"deux Chevaliers Jedi, gardiens de la paix  \n" +
+				"et de la justice dans la galaxie, de résoudre le conflit…");
+
+		this.setTextFont(histText);
+		histText.setTextAlignment(TextAlignment.CENTER);
+		histText.setLayoutX(265 - (118 * 2));
+		histText.setLayoutY(130);
+		return histText;
+	}
+
+	private Text createCreditText(){
+		Text creditText = new Text();
+		creditText.setText("© Han & Chubaka.");
+
+		this.setTextFont(creditText);
+		creditText.setTextAlignment(TextAlignment.CENTER);
+		creditText.setLayoutX(265 - (118 * 2));
+		creditText.setLayoutY(130);
+
+		return creditText;
+	}
+
 
 	private HBox createShipsToChoose() {
 		HBox box = new HBox();
