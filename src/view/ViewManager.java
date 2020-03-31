@@ -23,6 +23,7 @@ import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.HBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
@@ -157,36 +158,37 @@ public class ViewManager {
 	private Text createHistorySW(){
 		Text histText = new Text();
 		histText.setText("Il y a bien longtemps, dans une galaxie lointaine,\n" +
-				" trÃ¨s lointaine... \n" +
-				"La RÃ©publique Galactique est en pleine \n" +
-				"Ã©bullition. La taxation des routes \n" +
-				"commerciales reliant les systÃ¨mes Ã©loignÃ©s \n" +
-				"provoque la discorde. Pour rÃ©gler la question, \n" +
-				"la cupide FÃ©dÃ©ration du Commerce et ses \n" +
+				" très lointaine... \n" +
+				"La République Galactique est en pleine \n" +
+				"ébullition. La taxation des routes \n" +
+				"commerciales reliant les systèmes éloignés \n" +
+				"provoque la discorde. Pour régler la question, \n" +
+				"la cupide Fédération du Commerce et ses \n" +
 				"redoutables vaisseaux de guerre imposent \n" +
-				"un blocus Ã  la petite planÃ¨te Naboo. \n" +
-				"Face Ã  ce dangereux engrenage, alors que le \n" +
-				"CongrÃ¨s de la RÃ©publique sâ€™enlise dans des dÃ©bats  \n" +
-				"sans fin, le Chancelier SuprÃªme charge en secret \n" +
+				"un blocus à  la petite planète Naboo. \n" +
+				"Face à ce dangereux engrenage, alors que le \n" +
+				"Congrès de la République s'enlise dans des débats  \n" +
+				"sans fin, le Chancelier Suprème charge en secret \n" +
 				"deux Chevaliers Jedi, gardiens de la paix  \n" +
-				"et de la justice dans la galaxie, de rÃ©soudre le conflitâ€¦");
+				"et de la justice dans la galaxie, de résoudre le conflit");
 
 		this.setTextFont(histText);
 		histText.setTextAlignment(TextAlignment.CENTER);
 		histText.setLayoutX(265 - (118 * 2));
 		histText.setLayoutY(130);
+		histText.setFill(Color.WHITE);
 		return histText;
 	}
 
 	private Text createCreditText(){
 		Text creditText = new Text();
-		creditText.setText("Â© Han & Chubaka.");
+		creditText.setText("Réalisé par : \n\n Maxime Roumégoux \n\n et \n\n Théo Uzan");
 
 		this.setTextFont(creditText);
 		creditText.setTextAlignment(TextAlignment.CENTER);
-		creditText.setLayoutX(265 - (118 * 2));
-		creditText.setLayoutY(130);
-
+		creditText.setLayoutX(200);
+		creditText.setLayoutY(150);
+		creditText.setFill(Color.WHITE);
 		return creditText;
 	}
 

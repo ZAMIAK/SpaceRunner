@@ -62,7 +62,7 @@ public class GameViewManager {
 	private final static int STAR_RADIUS = 12;
 	private final static int SHIP_RADIUS = 27;
 	private final static int METEOR_RADIUS = 20;
-	private final static double DROP_STAR = 1.2;
+	private final static double DROP_STAR = 1.1;
 
 	public GameViewManager() {
 		initializeStage();
@@ -233,6 +233,8 @@ public class GameViewManager {
 					setGameDificult(15);
 				}else if(points > 5000 && points < 5100) {
 					setGameDificult(20);
+				}else if(points > 10000 && points < 10100) {
+					setGameDificult(25);
 				}
 				moveBackground();
 				moveGameElements();
@@ -251,7 +253,7 @@ public class GameViewManager {
 			}
 			ship.setRotate(angle);
 			if(ship.getLayoutX() > -20){
-				ship.setLayoutX(ship.getLayoutX() - 6);
+				ship.setLayoutX(ship.getLayoutX() - 10);
 			}
 		}
 		if(isRightKeyPressed && !isLeftKeyPressed){
@@ -260,7 +262,7 @@ public class GameViewManager {
 		}
 			ship.setRotate(angle);
 			if(ship.getLayoutX() < 522){
-				ship.setLayoutX(ship.getLayoutX() + 6);
+				ship.setLayoutX(ship.getLayoutX() + 10);
 			}
 		}
 		if(!isLeftKeyPressed && !isRightKeyPressed){
