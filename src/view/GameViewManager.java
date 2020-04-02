@@ -118,8 +118,8 @@ public class GameViewManager {
 		gameScene = new Scene(gamePane, GAME_WIDTH, GAME_HEIGHT);
 		gameStage = new Stage();
 		gameStage.setScene(gameScene);
-		gameStage.setResizable(false);
-		gameStage.initStyle(StageStyle.UNDECORATED);
+		//gameStage.setResizable(false);
+		//gameStage.initStyle(StageStyle.UNDECORATED);
 	}
 	
 	public void createNewGame(Stage menuStage, SHIP choosenShip) {

@@ -67,8 +67,8 @@ public class ViewManager {
 		mainScene = new Scene(mainPane, WIDTH, HEIGHT);
 		mainStage = new Stage();
 		mainStage.setScene(mainScene);
-		mainStage.setResizable(false);
-		mainStage.initStyle(StageStyle.UNDECORATED);
+		//mainStage.setResizable(false);
+		//mainStage.initStyle(StageStyle.UNDECORATED);
 		createSubScenes();
 		createButtons();
 		createBackground();
